@@ -1,0 +1,16 @@
+User 1
+UserName:FuntoRead
+Password: Funto!read3456
+Email: funtoread@somethingmail.com
+Phone Number:0459234678
+User 2
+"userName":"NovelLover345"
+"password": "Ilo@venovels789"
+"email": "Lovernovel765@fakemail.com"
+"phoneNumber":"7085504422"
+User 3
+"userName":"Booksarefun4u",
+"password": "Bookman!guy675",
+"email": "Lovernovel765@fakemail.com",
+"phoneNumber":"7085504422"
+
