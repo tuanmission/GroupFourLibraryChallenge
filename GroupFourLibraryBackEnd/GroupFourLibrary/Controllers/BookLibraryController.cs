@@ -52,5 +52,51 @@ namespace GroupFourLibrary.Controllers
            }
 
         }
+
+        [HttpGet]
+        [Route("search/{type}/{query}")]
+        public IEnumerable<BookDTO> searchBooks(string type, string query)
+        {
+            string storedProcedureName = "";
+            string sqlParameterName = "";
+            if (type == "bookId")
+            {
+                storedProcedureName = "SearchBookByBookId";
+                sqlParameterName = "@BookId";
+            }
+            else
+            {
+                storedProcedureName = "SearchBookByTitle";
+                sqlParameterName = "@Title";
+            }
+
+            List<BookDTO> books = new List<BookDTO>();
+            using (SqlConnection conn = new SqlConnection(ctxt.Database.GetConnectionString()))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand(storedProcedureName, conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter(sqlParameterName, query));
+                var result = comm.ExecuteReader();
+                while (result.Read())
+                {
+                    BookDTO bkDTO = new BookDTO
+                    {
+                        BookId = result.GetString(0),
+                        BookTitle = result.GetString(1),
+                        Author = result.GetString(2),
+                        Publisher = result.GetString(3)
+                    };
+
+                    books.Add(bkDTO);
+                }
+
+                conn.Close();
+                return books;
+            }
+
+          
+        }
+
     }
 }

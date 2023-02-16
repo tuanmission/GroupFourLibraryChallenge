@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -14,7 +15,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
 using GroupFourLibrary.Models;
+using Microsoft.IdentityModel.Tokens;
 
 
 namespace GroupFourLibrary
@@ -38,8 +41,29 @@ namespace GroupFourLibrary
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GroupFourLibrary", Version = "v1" });
             });
             services.AddDbContext<GroupFourLibraryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<IdentityUser, IdentityRole>()
-               .AddEntityFrameworkStores<GroupFourLibraryContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(config=>{
+                config.SignIn.RequireConfirmedEmail = false;
+            }).AddRoles<IdentityRole>().AddEntityFrameworkStores<GroupFourLibraryContext>()
+               .AddEntityFrameworkStores<GroupFourLibraryContext>().AddDefaultTokenProviders();
+            string key = Configuration["AuthSettings:key"];
+            services.AddAuthentication(auth =>
+            {
+                auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["AuthSettings:Audience"],
+                    ValidIssuer = Configuration["AuthSettings:Issuer"],
+                    RequireExpirationTime = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+                    ValidateIssuerSigningKey = true
+
+                };
+            });
             services.AddAutoMapper(typeof(GroupFourLibraryContext));  
         }
 
