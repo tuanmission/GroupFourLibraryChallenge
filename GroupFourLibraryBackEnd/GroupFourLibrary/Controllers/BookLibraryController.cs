@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Data.SqlClient;
 using GroupFourLibrary.Models;
@@ -21,8 +22,34 @@ namespace GroupFourLibrary.Controllers
         {
             this.ctxt = context;
         }
+
+        [HttpGet]
+        [Route("booklist")]
         public IEnumerable<BookDTO> ListBooks()
         {
+           List <BookDTO> books = new List <BookDTO>(); 
+           using(SqlConnection conn = new SqlConnection(ctxt.Database.GetConnectionString()))
+           {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("GetBookList",conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                var result = cmd.ExecuteReader();
+                while (result.Read())
+                {
+                    BookDTO bkDTO = new BookDTO
+                    {
+                        BookId = result.GetString(0),
+                        BookTitle = result.GetString(1),
+                        Author = result.GetString(2),
+                        Publisher = result.GetString(3)
+                    };
+
+                    books.Add(bkDTO);
+                }
+                conn.Close();
+                return books;
+
+           }
 
         }
     }

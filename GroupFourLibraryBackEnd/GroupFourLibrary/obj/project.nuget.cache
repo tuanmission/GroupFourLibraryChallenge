@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ncydMEEehsmBJ2dLJ045iygpCF531F/lu6xPBEevIfTrhAGIBpslp4rhwCk4IPjxIDLOlS0zkeOVB2Z0CEHsQQ==",
+  "dgSpecHash": "Na06jtj3NvdPhrB9ciQmx2b4PmyOasuBBR8MP9q3jJTYiWbSsSFwdLFa8759uCBZE4EzLm1A6Sk4XENF4/H8MQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibrary\\GroupFourLibrary\\GroupFourLibrary.csproj",
+  "projectFilePath": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibraryBackEnd\\GroupFourLibrary\\GroupFourLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tuanm\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\tuanm\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

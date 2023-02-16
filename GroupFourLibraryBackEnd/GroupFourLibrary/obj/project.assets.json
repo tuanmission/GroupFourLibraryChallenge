@@ -6548,11 +6548,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibrary\\GroupFourLibrary\\GroupFourLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibraryBackEnd\\GroupFourLibrary\\GroupFourLibrary.csproj",
       "projectName": "GroupFourLibrary",
-      "projectPath": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibrary\\GroupFourLibrary\\GroupFourLibrary.csproj",
+      "projectPath": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibraryBackEnd\\GroupFourLibrary\\GroupFourLibrary.csproj",
       "packagesPath": "C:\\Users\\tuanm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibrary\\GroupFourLibrary\\obj\\",
+      "outputPath": "C:\\Users\\tuanm\\Documents\\Group Four\\GroupFourLibraryBackEnd\\GroupFourLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
