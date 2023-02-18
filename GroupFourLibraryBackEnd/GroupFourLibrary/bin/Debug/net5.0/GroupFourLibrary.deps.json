@@ -35,6 +35,7 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Microsoft.AspNet.WebApi.Cors": "5.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.13",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "5.0.13",
           "Microsoft.AspNetCore.Cors": "2.2.0",
@@ -363,6 +364,57 @@
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
           }
+        }
+      },
+      "Microsoft.AspNet.Cors/5.2.0": {
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.20627.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.0": {
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.20627.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.0": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.20627.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Cors/5.2.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Cors": "5.2.0",
+          "Microsoft.AspNet.WebApi.Core": "5.2.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.Cors.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.20627.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.Cors.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -3263,6 +3315,34 @@
       "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Cors/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Wc9rsUBzDHyxRXhsKS2e2cGLzCEgX4ealqgJeBCZ+YVFBs8VkaF2R/it+0XW5H+INe4HeYEGfqEyL66xsiEg2Q==",
+      "path": "microsoft.aspnet.cors/5.2.0",
+      "hashPath": "microsoft.aspnet.cors.5.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aoS8o4BPb1Wc0A3W5xX0iHiqgnk9xmP4iSxZdNlEbtu5SgTgDyKya5FGq4GzjRw7FlQDBQ5t9s4p/saa0OFA4A==",
+      "path": "microsoft.aspnet.webapi.client/5.2.0",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OndfBxMYy/rFi86YAtzV2P815P09ZQnJNjDdCwN5v9cutN6GdI0YVcdlMlNw/WpVg9iN1yLkUxMx433tIQ15ZA==",
+      "path": "microsoft.aspnet.webapi.core/5.2.0",
+      "hashPath": "microsoft.aspnet.webapi.core.5.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Cors/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EWY3VQcSySQEfMP985/UMwzfYcZ/1WZFIg9rMld7ctSLyqHnchBig6w9K5jqOe4Ni+mqD4j/vc30L0dXKGGYQg==",
+      "path": "microsoft.aspnet.webapi.cors/5.2.0",
+      "hashPath": "microsoft.aspnet.webapi.cors.5.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",

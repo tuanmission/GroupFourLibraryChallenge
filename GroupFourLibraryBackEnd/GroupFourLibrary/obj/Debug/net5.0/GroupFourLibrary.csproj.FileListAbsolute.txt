@@ -142,3 +142,7 @@ C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\obj
 C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\obj\Debug\net5.0\GroupFourLibrary.pdb
 C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\obj\Debug\net5.0\GroupFourLibrary.genruntimeconfig.cache
 C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\obj\Debug\net5.0\ref\GroupFourLibrary.dll
+C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\tuanm\Documents\Group Four\GroupFourLibraryBackEnd\GroupFourLibrary\bin\Debug\net5.0\System.Web.Http.Cors.dll

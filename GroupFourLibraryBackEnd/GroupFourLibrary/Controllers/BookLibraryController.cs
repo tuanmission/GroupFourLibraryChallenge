@@ -163,8 +163,16 @@ namespace GroupFourLibrary.Controllers
                 var result = cmd.ExecuteReader();
                 while (result.Read())
                 {
+                    string returnedDate = "NOT RETURNED";
                     DateTime ReserveRetrieve = result.GetDateTime(4);
                     DateTime DueDateRetrieve = result.GetDateTime(5);
+                    
+                    if (!result.IsDBNull(6))
+                    {
+                        DateTime ReturnDate = result.GetDateTime(6);
+                        returnedDate = ReturnDate.ToString("yyyy-MM-dd");
+                    }
+  
                     string retrieveDate = ReserveRetrieve.ToString("yyyy-MM-dd");
                     string dueDate = DueDateRetrieve.ToString("yyyy-MM-dd");
 
@@ -175,7 +183,8 @@ namespace GroupFourLibrary.Controllers
                         Publisher = result.GetString(2),
                         ReservationNumber = result.GetString(3),
                         DateReserved = retrieveDate,
-                        DueDate = dueDate
+                        DueDate = dueDate,
+                        DateReturned =returnedDate
                     };
 
                     reservations.Add(rsViewMdl);

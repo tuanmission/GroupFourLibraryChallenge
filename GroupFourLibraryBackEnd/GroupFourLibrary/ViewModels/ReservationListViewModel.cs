@@ -13,5 +13,7 @@
 
         public string DueDate { get; set; }
 
+        public string DateReturned { get; set; }
+
     }
 }
