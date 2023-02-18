@@ -128,7 +128,8 @@ namespace GroupFourLibrary.Controllers
                         BookStoreId = result.GetInt32(1),
                         BookStoreName = result.GetString(2),
                         TotalCopies = result.GetInt32(3),
-                        CopiesAvailable = result.GetInt32(4)
+                        CopiesAvailable = result.GetInt32(4),
+                        BookCopyId = result.GetInt32(5)
                     };
 
                     books.Add( bkMdl);

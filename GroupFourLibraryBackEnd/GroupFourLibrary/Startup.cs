@@ -94,12 +94,13 @@ namespace GroupFourLibrary
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-
+            app.UseCors(MyAllowSpecificOrigins);
+            app.UseForwardedHeaders();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

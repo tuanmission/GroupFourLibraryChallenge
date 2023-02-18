@@ -11,5 +11,7 @@
 
         public int CopiesAvailable { get; set; }    
 
+        public int BookCopyId { get; set; }
+
     }
 }

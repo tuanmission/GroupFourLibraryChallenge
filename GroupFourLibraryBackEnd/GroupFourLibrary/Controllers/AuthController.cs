@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using GroupFourLibrary.Services;
 using GroupFourLibrary.ViewModels;
-
+using Microsoft.AspNetCore.Cors;
 
 namespace GroupFourLibrary.Controllers
 {
+    
     [Route("api/auth")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -20,7 +21,7 @@ namespace GroupFourLibrary.Controllers
 
         [HttpPost]
         [Route("login")]
-
+        [EnableCors("AllowOrigin")]
         public async Task<IActionResult> login(LoginUserViewModel loginViewMdl)
         {
             if (!ModelState.IsValid)
