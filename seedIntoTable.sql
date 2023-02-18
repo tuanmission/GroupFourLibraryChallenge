@@ -111,10 +111,40 @@ values(5, '2023-01-04','2023-01-07');
 
 Select * from Book;
 
-Select B.BookTitle, BS.BookStoreName, BC.TotalCopies, BC.CopiesAvailable from Book B 
-join BookCopy BC on BC.BookId = B.BookKeyId
-join BookStore BS on BS.BookStoreID =BC.BookStoreID;
+Select BookId, BookTitle, Author, Publisher
+from Book;
 
+Select BookId, BookTitle, Author, Publisher
+from Book
+where BookTitle like '%CQ%';
+
+
+Select BookId, BookTitle, Author, Publisher
+from Book
+where BookId like '%3880%';
+
+
+
+Select B.BookTitle,BS.BookStoreID, BS.BookStoreName, BC.TotalCopies, BC.CopiesAvailable from Book B 
+join BookCopy BC on BC.BookId = B.BookKeyId
+join BookStore BS on BS.BookStoreID =BC.BookStoreID
+where B.BookKeyId=2;
+
+
+Select  BC.TotalCopies, BC.CopiesAvailable from BookCopy BC
+where BC.BookCopyID=2;
+
+
+
+Select B.BookTitle, B.Author, B.Publisher, R.ReservationNumber, R.DateReserved, R.DueDate
+from AspNetUsers U
+join Reservation R on R.UserId = U.Id
+join BookCopy BC on R.BookCopyID= BC.BookCopyID 
+join Book B on B.BookKeyId=BC.BookId
+where U.Id='';
+
+Select *
+From BookStore;
 
 Select * from Reservation;
 
@@ -200,3 +230,4 @@ where ReservationID=5;
 
 
 
+Select from B.Book

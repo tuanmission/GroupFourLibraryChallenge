@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
+using GroupFourLibrary.Services;
 using GroupFourLibrary.Models;
 using Microsoft.IdentityModel.Tokens;
 
@@ -24,6 +25,7 @@ namespace GroupFourLibrary
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -64,7 +66,16 @@ namespace GroupFourLibrary
 
                 };
             });
-            services.AddAutoMapper(typeof(GroupFourLibraryContext));  
+            services.AddAutoMapper(typeof(GroupFourLibraryContext));
+            services.AddScoped<IUserService, UserService>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.SetIsOriginAllowed(isOriginAllowed: _ => true).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,7 +92,9 @@ namespace GroupFourLibrary
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
