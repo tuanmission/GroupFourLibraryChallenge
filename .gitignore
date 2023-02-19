@@ -1,0 +1,21 @@
+groupfourfrontend/node_modules
+
+groupfourfrontend/.pnp
+groupfourfrontend/.pnp.js
+
+# testing
+groupfourfrontend/coverage
+
+# production
+groupfourfrontend/build
+
+# misc
+groupfourfrontend/.DS_Store
+groupfourfrontend/.env.local
+groupfourfrontend/.env.development.local
+groupfourfrontend/.env.test.local
+groupfourfrontend/.env.production.local
+
+groupfourfrontend/npm-debug.log*
+groupfourfrontend/yarn-debug.log*
+groupfourfrontend/yarn-error.log*
