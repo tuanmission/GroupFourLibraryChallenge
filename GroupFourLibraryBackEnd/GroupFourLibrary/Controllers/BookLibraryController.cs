@@ -142,6 +142,7 @@ namespace GroupFourLibrary.Controllers
 
         [HttpGet]
         [Route("myreservations/{UserName}")]
+        [Authorize]
         public async Task<IActionResult> myReservations(string UserName)
         {
            
@@ -222,6 +223,7 @@ namespace GroupFourLibrary.Controllers
 
         [HttpPost]
         [Route("reserve")]
+        [Authorize]
         public async Task<IActionResult> ReserveBook(createReservationViewModel rsViewModel)
         {
             string username = rsViewModel.userName;
@@ -299,6 +301,7 @@ namespace GroupFourLibrary.Controllers
 
         [HttpPut]
         [Route("unreserve/{reservationNumber}")]
+        [Authorize]
         public IActionResult unReserveBook(string reservationNumber)
         {
        
